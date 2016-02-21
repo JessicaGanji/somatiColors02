@@ -1,0 +1,20 @@
+<section class="row">
+    <div class="col-md-12">
+        
+        <!--Filter Events-->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for..." ng-model="search">
+        </div>
+        
+        <!--New Event-->
+        <div ng-show="eventsCtrl.newEvent" >
+            <new-event-form></new-event-form>
+        </div>
+        
+        <!--Timeline of Events-->        
+        <all-events></all-events>
+        
+    </div>
+</section>
+
+

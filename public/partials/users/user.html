@@ -1,0 +1,25 @@
+<section class="row">
+    <div class="col-md-12">
+        <h2>Account Information</h2>
+        
+        <hr>          
+
+        <p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }}</p>
+        <p><strong>email:</strong> {{ usersCtrl.info.username }}</p><hr>
+
+        <p><strong>mental health physcian:</strong> {{ usersCtrl.info.mental_health_physician }}</p>
+        <p><strong>physician's email:</strong> {{ usersCtrl.info.physician_email }}</p><hr>
+        
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.joy }" ><strong>joy</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.acceptance }" ><strong>acceptance</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.fear }" ><strong>fear</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.surprise }" ><strong>surprise</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.sadness }" ><strong>sadness</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.disgust }" ><strong>disgust</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anger }" ><strong>anger</strong></div>
+        <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anticipation }" ><strong>anticipation</strong></div>
+        
+        <button class="blue-button left-half" ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>
+        <button class="red-button right-half" ng-click="usersCtrl.deleteUserApi(usersCtrl.params)">Delete User</button>
+    </div>
+</section>

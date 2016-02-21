@@ -1,0 +1,114 @@
+<div ng-show="eventsCtrl.newEvent">
+    <button class="red-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Nevermind!</button>
+</div>
+
+<ul class="cbp_tmtimeline">
+    <li>
+        <time class="cbp_tmtime"><span></span><span></span></time>
+        <div class="cbp_tmicon cbp_tmicon-screen"></div>
+        <div class="cbp_tmlabel">
+            
+            <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
+                <h2>Create a New Event</h2><br>
+                <div class="left">
+                    <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
+                    <label for="title" class="bottom-padding">Title</label>
+
+                    <input type="date" id="date" ng-model="eventsCtrl.addEventInfo.date">
+                    <label for="date" class="bottom-padding">Date</label>
+                    
+                    <input type="text" id="location" placeholder="location" ng-model="eventsCtrl.addEventInfo.location">
+                    <label for="location" class="bottom-padding">Location</label>
+
+                    <input type="text" id="people_involved" placeholder="people" ng-model="eventsCtrl.addEventInfo.people_involved">
+                    <label for="people_involved" class="bottom-padding">People Involved</label><br>
+
+                    <label for="situation">Situation</label>
+                    <textarea type="text-area" class="bottom-padding" id="situation" placeholder="situation" ng-model="eventsCtrl.addEventInfo.situation"></textarea>
+
+                    <label for="emotion">Emotion</label>
+                    <select name="emotion" class="bottom-padding" ng-model="eventsCtrl.addEventInfo.emotion">
+                        <option value="joyful">Joyful</option>
+                        <option value="accepted">Accepted</option>
+                        <option value="fearful">Fearful</option>
+                        <option value="surprised">Surprised</option>
+                        <option value="sad">Sad</option>
+                        <option value="disgusted">Disgusted</option>
+                        <option value="angry">Angry</option>
+                        <option value="anticipation">Anticipation</option>
+                    </select>
+                    
+                    <label for="triggers">Triggers</label>
+                    <textarea type="text-area" class="bottom-padding" id="triggers" placeholder="triggers" ng-model="eventsCtrl.addEventInfo.triggers"></textarea>
+
+                    <label for="automatic_thoughts">Automatic Thoughts</label>
+                    <textarea type="text-area" class="bottom-padding" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.addEventInfo.automatic_thoughts"></textarea>
+
+                    <label for="rational_response">Rational Response</label>
+                    <textarea type="text-area" class="bottom-padding" id="rational_response" placeholder="rational response" ng-model="eventsCtrl.addEventInfo.rational_response"></textarea>
+
+                    <label for="challenged_beliefs">Challenged Beliefs Involved</label>
+                    <textarea type="text-area" class="bottom-padding" id="challenged_beliefs" placeholder="challenged beliefs" ng-model="eventsCtrl.addEventInfo.challenged_beliefs"></textarea>
+                    
+                    <input type="text" id="lesson" placeholder="lesson" ng-model="eventsCtrl.addEventInfo.lesson">
+                    <label for="lesson" class="bottom-padding">Lesson in 140 char (Twitter-ified)</label><br>
+                    
+                    <label for="old_perspective">Old Perspective</label>
+                    <textarea type="text-area" class="bottom-padding" id="old_perspective" placeholder="old perspective" ng-model="eventsCtrl.addEventInfo.old_perspective"></textarea>
+
+                    <label for="new_perspective">New Perspective</label>
+                    <textarea type="text-area" class="bottom-padding" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.addEventInfo.new_perspective"></textarea>
+
+                    <label for="coping_strategies">Coping Strategies</label>
+                    <textarea type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.addEventInfo.coping_strategies"></textarea>
+                </div>
+                
+                <div class="right">
+                
+                    <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+                    
+                    <fieldset ng-model="bodily_sensations">
+                        <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="chronic_headaches">Chronic Headaches</label><br>
+                        
+                        <input type="radio" id="back_pain" value="Back Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="back_pain">Back Pain</label><br>
+                        
+                        <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="arthritis">Arthritis</label><br>
+                        
+                        <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
+                        
+                        <input type="radio" id="pelvic_pain" value="Pelvic Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="pelvic_pain">Pelvic Pain</label><br>
+                        
+                        <input type="radio" id="Tightness_in_the_chest" value="Tightness in the Chest" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="Tightness_in_the_chest">Tightness in the Chest</label><br>
+                        
+                        <input type="radio" id="dizziness" value="Dizziness" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="dizziness">Dizziness</label><br>
+                        
+                        <input type="radio" id="appetite_change" value="Appetite Change" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="appetite_change">Appetite Change</label><br>                        
+                        
+                        <input type="radio" id="difficulty_sleeping" value="Difficulty Sleeping" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="difficulty_sleeping">Difficulty Sleeping</label><br>
+                        
+                        <input type="radio" id="stomach_or_bowel_problems" value="Stomach or Bowel Problems" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="stomach_or_bowel_problems">Stomach or Bowel Problems</label><br>
+
+                        <input type="radio" id="low_energy" value="Low Energy" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="low_energy">Low Energy</label><br>
+                        
+                        <input type="radio" id="shortness_of_breath" value="Shortness of Breath" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="shortness_of_breath">Shortness of Breath</label><br>
+                    </fieldset>
+                </div>
+                
+                <div style="clear:both;"></div>
+                <button class="green-button" type="submit">Submit</button>
+            </form> 
+        </div>
+    </li>
+</ul>
