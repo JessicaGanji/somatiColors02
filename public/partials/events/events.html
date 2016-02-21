@@ -34,7 +34,7 @@
             <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
         </div>
         
-         <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
+        <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
 
             <div class="cbp_tmicon cbp_tmicon-phone"></div>
             <div class="cbp_tmlabel">
@@ -190,6 +190,6 @@
                     <button class="green-button" type="submit">Edit Event</button>
                 </form> 
             </div>
-         </div>
+        </div>
     </li>
-</ul>
+</ul> 

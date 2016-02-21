@@ -8,7 +8,7 @@
 		url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+} 
 
 .cbp_tmtimeline {
 	margin: 30px 0 0 0;
@@ -24,9 +24,13 @@
 	top: 0;
 	bottom: 0;
 	width: 10px;
-	background: #f8f8f8;
+	background: #afdcf8;
 	left: 20%;
 	margin-left: -10px;
+}
+
+.cbp_tmtimeline > li {
+	position: relative;
 }
 
 /* The date/time */
@@ -35,28 +39,32 @@
 	width: 25%;
 	padding-right: 100px;
 	position: absolute;
-    font-family: 'Kalam', cursive;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span {
 	display: block;
 	text-align: right;
-    color: #777;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-	font-size: 2em;    
-
+	font-size: 0.9em;
+	color: #bdd0db;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-	font-size: 1.5em;
+	font-size: 2.9em;
+	color: #3594cb;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+	color: #6cbfee;
 }
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
 	margin: 0 0 15px 25%;
 	background: #f5f5f5;
+	color: #777;
 	padding: 2em;
 	font-size: 1.2em;
 	font-weight: 300;
@@ -65,13 +73,14 @@
 	border-radius: 5px;
 }
 
-/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
 	background: #f8f8f8;
-}*/
+}
 
-.cbp_tmtimeline > li .cbp_tmlabel h3 { 
+.cbp_tmtimeline > li .cbp_tmlabel h2 { 
 	margin-top: 0px;
 	padding: 0 0 10px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 /* The triangle */
@@ -83,14 +92,14 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: #f5f5f5;
+	border-right-color: #3594cb;
 	border-width: 10px;
 	top: 10px;
 }
 
-/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-	border-right-color: #f8f8f8;
-}*/
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+	border-right-color: #6cbfee;
+}
 
 /* The icons */
 .cbp_tmtimeline > li .cbp_tmicon {
@@ -107,27 +116,30 @@
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	color: #fff;
-	background: #f5f5f5;
+	background: #46a4da;
 	border-radius: 50%;
-	box-shadow: 0 0 0 8px #f8f8f8;
+	box-shadow: 0 0 0 8px #afdcf8;
 	text-align: center;
 	left: 20%;
 	top: 0;
 	margin: 0 0 0 -25px;
 }
 
-/*.cbp_tmicon-phone:before {
+.cbp_tmicon-phone:before {
 	content: "\e000";
 }
+
 .cbp_tmicon-screen:before {
 	content: "\e001";
 }
+
 .cbp_tmicon-mail:before {
 	content: "\e002";
 }
+
 .cbp_tmicon-earth:before {
 	content: "\e003";
-}*/
+}
 
 /* Example Media Queries */
 @media screen and (max-width: 65.375em) {
@@ -163,7 +175,7 @@
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: #f8f8f8;
+		border-bottom-color: #3594cb;
 		top: -20px;
 	}
 

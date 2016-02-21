@@ -7,6 +7,7 @@ angular.module('SomatiColors')
 
     .directive('allEvents', allEvents)
     .directive('newEventForm', newEventForm)
+    .directive('sidebar', sidebar)
     
 // Index Directives //'A' == attribute, 'E' == element, 'C' == class
 function navTop() {
@@ -27,6 +28,7 @@ function footerBottom() {
   return directive;
 };
 
+// User Directives //'A' == attribute, 'E' == element, 'C' == class
 function oneUser() {
   var directive = {
   restrict: 'E',
@@ -45,6 +47,7 @@ function editUserForm() {
   return directive;
 };
 
+// Event Directives //'A' == attribute, 'E' == element, 'C' == class
 function allEvents() {
   var directive = {
   restrict: 'E',
@@ -59,6 +62,15 @@ function newEventForm() {
   restrict: 'E',
   replace: false,
   templateUrl:  "../partials/events/new.html"
+  };
+  return directive;
+};
+
+function sidebar() {
+  var directive = {
+  restrict: 'E',
+  replace: false,
+  templateUrl:  "../partials/events/sidebar.html"
   };
   return directive;
 };

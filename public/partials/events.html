@@ -1,11 +1,19 @@
 <section class="row">
-    <div class="col-md-12">
-        
+    <div class="col-md-12">    
         <!--Filter Events-->
         <div class="search-bar">
             <input type="text" placeholder="Search for..." ng-model="search">
         </div>
-        
+    </div>
+</section>
+
+<section class="row">
+    <div class="col-md-4">        
+        <!--Sidebar-->        
+        <sidebar></sidebar>
+    </div>
+
+    <div class="col-md-8">        
         <!--New Event-->
         <div ng-show="eventsCtrl.newEvent" >
             <new-event-form></new-event-form>
@@ -13,8 +21,5 @@
         
         <!--Timeline of Events-->        
         <all-events></all-events>
-        
     </div>
 </section>
-
-
