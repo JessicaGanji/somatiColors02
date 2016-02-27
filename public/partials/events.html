@@ -8,13 +8,16 @@
 </section>
 
 <section class="row">
-    <div class="col-md-4">        
+    <div class="col-md-3">        
         <!--Sidebar-->        
         <sidebar></sidebar>
     </div>
 
-    <div class="col-md-8">        
+    <div class="col-md-9">        
         <!--New Event-->
+        <div ng-hide="eventsCtrl.newEvent">
+            <button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+        </div>
         <div ng-show="eventsCtrl.newEvent" >
             <new-event-form></new-event-form>
         </div>

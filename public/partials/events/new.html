@@ -64,8 +64,10 @@
                 </div>
                 
                 <div class="right">
-                
-                    <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+
+                    <div ng-if="eventsCtrl.addEventInfo.bodily_sensations == 'Chronic Headaches'">
+                        <span class="chronic-headaches"><img src="../../assets/body.png"/></span><br><br><br>
+                    </div>
                     
                     <fieldset ng-model="bodily_sensations">
                         <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.addEventInfo.bodily_sensations">

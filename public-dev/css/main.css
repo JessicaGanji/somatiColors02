@@ -178,9 +178,9 @@ header {
     width: 40%;
     padding-left: 5%;
     text-align: center;
-    border-width: 0 0 0 1px;
+    /*border-width: 0 0 0 1px;
     border-style: solid;
-    border-color: #d1d1d1;
+    border-color: #d1d1d1;*/
 }
 
 .right img {
@@ -279,18 +279,76 @@ button {
 }
 
 /*Body Image*/
-.favorite {
-    position: relative;
+.chronic-headaches {
+    position:relative;
     display: inline-block;
 }
-.favorite:before {
+
+.chronic-headaches:before {
     color:#ffc548;
-    font-size: 25px;
+    font-size: 20px;
     content: "\2605";
     position: absolute;
-    left: 130px;
-    top: 60px;
+    left: 45%;
+    top: 20%;
 }
+
+
+.back-pain {
+    position:relative;
+    display: inline-block;
+}
+
+.arthritis {
+    position:relative;
+    display: inline-block;
+}
+
+.muscle-aches-and-cramps {
+    position:relative;
+    display: inline-block;
+}
+
+.pelvic-pain {
+    position:relative;
+    display: inline-block;
+}
+
+.tightness-in-the-chest {
+    position:relative;
+    display: inline-block;
+}
+
+.dizziness {
+    position:relative;
+    display: inline-block;
+}
+
+.appetite-change {
+    position:relative;
+    display: inline-block;
+}
+
+.difficulty-sleeping {
+    position:relative;
+    display: inline-block;
+}
+
+.stomach-or-bowel-problems {
+    position:relative;
+    display: inline-block;
+}
+
+.low-energy {
+    position:relative;
+    display: inline-block;
+}
+
+.shortness-of-breath {
+    position:relative;
+    display: inline-block;
+}
+
 
 
 
@@ -300,7 +358,6 @@ button {
     .logo {
         width:100%;
     }
-
 
     header {
         background-image: url("../assets/hero.jpg");

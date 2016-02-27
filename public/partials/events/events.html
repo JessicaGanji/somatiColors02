@@ -1,7 +1,3 @@
-<div ng-hide="eventsCtrl.newEvent">
-    <button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
-</div>
-
 <ul class="cbp_tmtimeline">
 
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
@@ -31,18 +27,25 @@
         </div>
         
         <div ng-if="event.emotion == 'angry'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
         </div>
         
         <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
 
-            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+            <div class="cbp_tmicon cbp_tmicon-phone">ssss</div>
+            
+            <div ng-if="event.emotion == 'angry'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
+            </div>
+        
             <div class="cbp_tmlabel">
                 <h3><strong>{{ event.title }}</strong></h3>
                 
                 <div class="left"> 
                     <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
+                    <p>{{ event.date | date: 'MMM d, yyyy' }} ( {{ event.emotion }} )</p>
+                                
                     <p>{{ event.situation }}</p>    
                     
                     <p>I felt <strong>{{ event.emotion }}</strong>.</p>
@@ -66,7 +69,10 @@
                 </div>
                 
                 <div class="right">
-                    <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+                    <div ng-if="">
+                        <span class="body"><img src="../../assets/body.png"/></span><br><br><br>
+                    </div>    
+
                 </div>
                 
                 <div style="clear:both;"></div>
