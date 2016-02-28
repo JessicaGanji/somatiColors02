@@ -25,7 +25,7 @@
 	bottom: 0;
 	width: 10px;
 	background: #f8f8f8;
-	left: 20%;
+	left: 4%;
 	margin-left: -10px;
 }
 
@@ -33,36 +33,9 @@
 	position: relative;
 }
 
-/* The date/time */
-.cbp_tmtimeline > li .cbp_tmtime {
-	display: block;
-	width: 25%;
-	padding-right: 100px;
-	position: absolute;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span {
-	display: block;
-	text-align: right;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:first-child {
-	font-size: 0.9em;
-	color: #bdd0db;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:last-child {
-	font-size: 2.9em;
-	color: #3594cb;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-	color: #6cbfee;
-}
-
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
-	margin: 0 0 15px 25%;
+	margin: 0 0 15px 10%;
 	background: #f5f5f5;
 	color: #777;
 	padding: 2em;
@@ -98,7 +71,7 @@
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-	border-right-color: #f8f8f8;
+	border-right-color: #f5f5f5;
 }
 
 /* The icons */
@@ -120,7 +93,7 @@
 	border-radius: 50%;
 	box-shadow: 0 0 0 8px #f8f8f8;
 	text-align: center;
-	left: 20%;
+	left: 4%;
 	top: 0;
 	margin: 0 0 0 -25px;
 }

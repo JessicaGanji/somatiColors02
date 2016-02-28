@@ -1,78 +1,70 @@
 <ul class="cbp_tmtimeline">
 
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
-            
-        <div ng-if="event.emotion == 'joyful'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">( {{ event.emotion }} )</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'accepted'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'fearful'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'surprised'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'sad'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'disgusted'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'angry'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
-        </div>
         
         <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
 
-            <div class="cbp_tmicon cbp_tmicon-phone">ssss</div>
+            <div ng-if="event.emotion == 'joyful'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }">></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'accepted'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.acceptance }"></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'fearful'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.fear }">></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'surprised'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.surprise }">></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'sad'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.sadness }">></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'disgusted'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.disgust }">></div>
+            </div>
             
             <div ng-if="event.emotion == 'angry'">
                 <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
             </div>
         
             <div class="cbp_tmlabel">
-                <h3><strong>{{ event.title }}</strong></h3>
                 
+                <h3><strong>{{ event.title }}</strong> ( {{ event.emotion }} )</h3>
+                <p>{{ event.date | date: 'MMM d, yyyy' }}</p>
+                <hr>
+                                    
                 <div class="left"> 
                     <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
-                    <p>{{ event.date | date: 'MMM d, yyyy' }} ( {{ event.emotion }} )</p>
-                                
-                    <p>{{ event.situation }}</p>    
+                    <p>{{ event.situation }}</p>
                     
-                    <p>I felt <strong>{{ event.emotion }}</strong>.</p>
-
-                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
-                    
-                    <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
+                    <p>At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
                     But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
                     
                     <p><strong>{{ event.behaviors }} </strong></p>
                     <p><strong>{{ event.consequences }}</strong></p>
                     <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-                    <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
+                    <p><strongWhat did I take away from this experience?</strong> {{ event.lesson }}</p>
 
-                    <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+                    <p><strong>Old Perspective:</strong> {{ event.old_perspective }}</p>
                     
-                    <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+                    <p><strong>New Perspective:</strong> {{ event.new_perspective }}</p>
                     
-                    <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
+                    <p><strong>Future Coping Strategies:</strong> {{ event.coping_strategies }}</p>
                 </div>
                 
                 <div class="right">
-                    <div ng-if="">
-                        <span class="body"><img src="../../assets/body.png"/></span><br><br><br>
-                    </div>    
-
+                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+                                        
+                    <div ng-if="!event.bodily_sensations">
+                        <span><img src="../../assets/body.png"/></span>
+                    </div>
                 </div>
                 
                 <div style="clear:both;"></div>

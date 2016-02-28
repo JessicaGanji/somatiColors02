@@ -65,8 +65,20 @@
                 
                 <div class="right">
 
+                    <div ng-if="!eventsCtrl.addEventInfo.bodily_sensations">
+                        <span><img src="../../assets/body.png"/></span>
+                    </div>
+                    
                     <div ng-if="eventsCtrl.addEventInfo.bodily_sensations == 'Chronic Headaches'">
-                        <span class="chronic-headaches"><img src="../../assets/body.png"/></span><br><br><br>
+                        <span><img src="../../assets/body.png"/></span>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.addEventInfo.bodily_sensations == 'Back Pain'">
+                        <span><img src="../../assets/body.png"/></span>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.addEventInfo.bodily_sensations == 'Muscle Aches and Cramps'">
+                        <span><img src="../../assets/body.png"/></span>
                     </div>
                     
                     <fieldset ng-model="bodily_sensations">
@@ -76,14 +88,8 @@
                         <input type="radio" id="back_pain" value="Back Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="back_pain">Back Pain</label><br>
                         
-                        <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="arthritis">Arthritis</label><br>
-                        
                         <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
-                        
-                        <input type="radio" id="pelvic_pain" value="Pelvic Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="pelvic_pain">Pelvic Pain</label><br>
+                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>  
                         
                         <input type="radio" id="Tightness_in_the_chest" value="Tightness in the Chest" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="Tightness_in_the_chest">Tightness in the Chest</label><br>

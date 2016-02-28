@@ -9,6 +9,7 @@ section {
     /*border: 4px solid red;*/
     padding: 0 30px 30px 30px;
 }
+
 .row {
     background-color: white;
 }
@@ -66,7 +67,7 @@ strong {
 
 header {
     background-image: url("../assets/hero.jpg");
-    background-position: center center;
+    background-position: center bottom;
     background-size: 100% auto;
     height: 450px;
     padding-top: 100px;
@@ -156,9 +157,7 @@ header {
 
 /* Color Palette */
 .colors {
-    width: 100%;
     padding: 25px;
-    margin: 0 0 1px 0;
     background: #eee;
     /*border-radius: 5px;*/
     text-align: center;
@@ -185,6 +184,8 @@ header {
 
 .right img {
     width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 5px;
 }
 
 label {
@@ -279,7 +280,7 @@ button {
 }
 
 /*Body Image*/
-.chronic-headaches {
+/*.chronic-headaches {
     position:relative;
     display: inline-block;
 }
@@ -291,67 +292,7 @@ button {
     position: absolute;
     left: 45%;
     top: 20%;
-}
-
-
-.back-pain {
-    position:relative;
-    display: inline-block;
-}
-
-.arthritis {
-    position:relative;
-    display: inline-block;
-}
-
-.muscle-aches-and-cramps {
-    position:relative;
-    display: inline-block;
-}
-
-.pelvic-pain {
-    position:relative;
-    display: inline-block;
-}
-
-.tightness-in-the-chest {
-    position:relative;
-    display: inline-block;
-}
-
-.dizziness {
-    position:relative;
-    display: inline-block;
-}
-
-.appetite-change {
-    position:relative;
-    display: inline-block;
-}
-
-.difficulty-sleeping {
-    position:relative;
-    display: inline-block;
-}
-
-.stomach-or-bowel-problems {
-    position:relative;
-    display: inline-block;
-}
-
-.low-energy {
-    position:relative;
-    display: inline-block;
-}
-
-.shortness-of-breath {
-    position:relative;
-    display: inline-block;
-}
-
-
-
-
+}*/
 
 @media (max-width: 480px) {
     
