@@ -14,7 +14,7 @@
     <div class="col-md-8">        
         <!--New Event-->
         <div ng-hide="eventsCtrl.newEvent">
-            <button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+            <button class="green-button switch-margin" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
         </div>
         <div ng-show="eventsCtrl.newEvent" >
             <new-event-form></new-event-form>

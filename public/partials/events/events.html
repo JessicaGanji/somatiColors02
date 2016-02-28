@@ -13,7 +13,7 @@
             </div>
             
             <div ng-if="event.emotion == 'fearful'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.fear }">></div>
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.fear }"></div>
             </div>
             
             <div ng-if="event.emotion == 'surprised'">
@@ -43,10 +43,13 @@
                     
                     <p>{{ event.situation }}</p>
                     
-                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+                    <p>Experienced <strong>{{ event.bodily_sensations }}</strong></p>
                     
-                    <p>At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
-                    But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
+                    <p>Triggered by <strong>{{ event.triggers }}</strong></p>
+                    
+                    <p>At first, I thought: <strong>{{ event.automatic_thoughts }}</strong></p>
+                    
+                    <p>When I had a chance to think about what had happened, I realized: <strong>{{ event.rational_thoughts }}</strong></p>
                     
                     <p><strong>{{ event.behaviors }} </strong></p>
                     <p><strong>{{ event.consequences }}</strong></p>

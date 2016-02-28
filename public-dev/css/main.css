@@ -113,11 +113,11 @@ header {
     font-weight: 500;
     line-height: 1.4;
     /*text-shadow:
-        -1px -1px 1px #f5f5f5,  
-        1px -1px 1px #f5f5f5,
-        -1px 1px 1px #f5f5f5,
-        1px 1px 1px #f5f5f5;
-        background-color: #f5f5f5;*/
+    -1px -1px 1px #f5f5f5,  
+    1px -1px 1px #f5f5f5,
+    -1px 1px 1px #f5f5f5,
+    1px 1px 1px #f5f5f5;
+    background-color: #f5f5f5;*/
 }
 
 .landing h4 {
@@ -181,8 +181,18 @@ header {
     background: #f5f5f5;
     text-align: center;
     font-family: 'Kalam', cursive; 
+    font-size: 18px; 
+    padding: 90px 0;  
+}
+
+.colors h3 {
     font-size: 18px;   
 }
+
+.colors h4 {
+    font-size: 15px;   
+}
+
 
 /* Bars */
 .side-bar {
@@ -335,6 +345,10 @@ button {
 .right-half {
     float: right;
     width: 49%;
+}
+
+.switch-margin {
+    margin: 0 0 15px 0;   
 }
 
 /*Body Image*/
