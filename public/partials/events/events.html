@@ -34,14 +34,16 @@
         
             <div class="cbp_tmlabel">
                 
-                <h3><strong>{{ event.title }}</strong> ( {{ event.emotion }} )</h3>
-                <p>{{ event.date | date: 'MMM d, yyyy' }}</p>
+                <h3>{{ event.title }} <span>( {{ event.emotion }} )</span></h3>
+                <p>{{ event.date | date: 'MMMM d, yyyy' }}</p>
                 <hr>
                                     
                 <div class="left"> 
                     <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
                     <p>{{ event.situation }}</p>
+                    
+                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
                     
                     <p>At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
                     But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
@@ -50,7 +52,7 @@
                     <p><strong>{{ event.consequences }}</strong></p>
                     <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-                    <p><strongWhat did I take away from this experience?</strong> {{ event.lesson }}</p>
+                    <p><strong> What did I take away from this experience?</strong> {{ event.lesson }}</p>
 
                     <p><strong>Old Perspective:</strong> {{ event.old_perspective }}</p>
                     
@@ -59,12 +61,12 @@
                     <p><strong>Future Coping Strategies:</strong> {{ event.coping_strategies }}</p>
                 </div>
                 
-                <div class="right">
-                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
-                                        
+                <div class="right">                                        
                     <div ng-if="!event.bodily_sensations">
                         <span><img src="../../assets/body.png"/></span>
                     </div>
+                    
+                    <p><strong>{{ event.bodily_sensations }}</strong></p>
                 </div>
                 
                 <div style="clear:both;"></div>
