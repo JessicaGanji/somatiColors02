@@ -213,8 +213,20 @@ header {
     padding: 3px 0; 
 }
 
-.search-bar input[type=text]:placeholder-shown {
-    color: #fff;
+.search-bar input::-webkit-input-placeholder {
+    color: #fff !important;
+}
+ 
+.search-bar input:-moz-placeholder { /* Firefox 18- */
+    color: #fff !important;  
+}
+ 
+.search-bar input::-moz-placeholder {  /* Firefox 19+ */
+    color: #fff !important;  
+}
+ 
+.search-bar input:-ms-input-placeholder {  
+    color: #fff !important;  
 }
 
 /* Timeline Labels */
