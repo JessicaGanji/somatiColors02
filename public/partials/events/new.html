@@ -64,6 +64,11 @@
                 </div>
                 
                 <div class="right">
+                    <!--Undefined-->
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && !eventsCtrl.addEventInfo.bodily_sensations">
+                        <span><p>Please specify your gender in your account settings to make use of this visual representation.</p></span>
+                    </div>
+                    
                     <!--Female-->
                     <div ng-if="eventsCtrl.userInfo.gender == 'female' && !eventsCtrl.addEventInfo.bodily_sensations">
                         <span><img src="../../assets/female/body.png"/></span>

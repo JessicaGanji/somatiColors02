@@ -71,6 +71,7 @@ h3 {
 p {
     font-size: 14px;
     margin-bottom: 14px;
+    line-height: 1.5;
 }
 
 span {
@@ -116,7 +117,8 @@ header h3 {
     font-size: 24px;
     color: #e55c4c;
     font-weight: 600;
-
+    line-height: 1.5;
+    margin-bottom: 14px;
 }
 
 .landing ul {

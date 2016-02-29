@@ -40,5 +40,7 @@ apiRouter.route('/users/:user_id/events/:id')
     .get(eventsController.show)
 	.delete(eventsController.destroy)
 	.put(eventsController.update)
+    
+    .post(eventsController.mailer)
 
 module.exports = apiRouter

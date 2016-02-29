@@ -1,4 +1,5 @@
 var Event = require('../models/event.js');
+var H_GMAIL_KEY = process.env.H_GMAIL_KEY || require('../config/key.js');
 
 // GET api/:id/events
 function index(request, response) {
@@ -108,10 +109,52 @@ function destroy(request, response) {
   });
 };
 
+
+// MAILER
+function mailer(request, response) {
+  var id = request.params.id;
+
+  var recipient             = request.body.recipient;
+  var email                 = request.body.email;
+  var subject               = request.body.subject;
+  var message               = request.body.message;
+
+  Event.findById({_id: id}, function (error, message_user){
+    if(error) console.log( "There is an error sending your message because:" + error );
+    
+    console.log("Reporting for duty from Event Mailer")
+    console.log(message_user.local.email)
+
+    var nodemailer  = require('nodemailer');
+
+    // create reusable transporter object using the default SMTP transport
+    var transporter = nodemailer.createTransport(H_GMAIL_KEY);
+
+    var mailOptions = {
+        from: 'SomatiColors',
+        to: [recipient, email],
+        subject: subject,
+        text: message,
+        html: message
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+  });
+  
+  response.redirect('/confirmation')
+};
+
 module.exports = {
   index: index,
   create: create,
   show: show,
   update: update,
-  destroy: destroy
+  destroy: destroy,
+  mailer: mailer
 };
