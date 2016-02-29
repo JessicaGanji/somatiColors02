@@ -16,12 +16,16 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     vm.userInfo = {};
     vm.updatedUserInfo = {};
     vm.getUserEventAPI = getUserEventAPI;
+    vm.myEmotion = new String()
 
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id) {
        getUserEventAPI(user_id);
        eventsFactory.showEvents(user_id)
         .then(function(response) {
+          for(var i = 0; i < response.length; i++){
+            response[i].emotion = new String(response[i].emotion)
+          }
            vm.events = response.data.events;
            
        });
@@ -33,11 +37,13 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
    // Add one event for that user
    vm.addEventInfo = {};
    vm.newEvent = false;
+   
 
    function addEventAPI(user_id) {
        eventsFactory.postEvent(user_id, vm.addEventInfo)
         .then(function(response) {
             vm.addEventInfo = response.data.event;
+            response.data.event.emotion = new String(response.data.event.emotion);
             vm.editing = false;
             getEventsAPI(vm.params);
             vm.newEvent = false;
@@ -52,6 +58,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     function getUserEventAPI(user_id) {
         usersFactory.showUser(user_id)
         .then(function(response){
+            response.emotion = new String(response.date)
             vm.userInfo = response.data;
             vm.updatedUserInfo = response.data;
             console.log(response.data);
