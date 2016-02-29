@@ -15,6 +15,11 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: '../partials/landing.html'
         })
+        
+        .state('about', {
+            url: '/about',
+            templateUrl: '../partials/about.html'
+        })
 
         .state('login', {
             url: '/login',

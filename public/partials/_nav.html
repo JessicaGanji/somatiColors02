@@ -1,45 +1,20 @@
-<div class="row">
+<div class="row" ng-controller="UsersController as usersCtrl">
     <div class="col-md-12">
-        
-        <div ng-controller="UsersController as usersCtrl">
-            <nav class="navbar navbar-default">
-                <div>
-                    <a class="navbar-brand logo" ui-sref="landing">Somati<span class="red">C</span><span class="red">o</span><span class="yellow">l</span><span class="green">o</span><span class="blue">r</span>s</a>
-                    <ul class="nav navbar-nav navbar-right">
+        <nav class="navbar navbar-default">
+            <div>
+                <a class="navbar-brand logo" ui-sref="landing">Somati<span class="red">C</span><span class="red">o</span><span class="yellow">l</span><span class="green">o</span><span class="blue">r</span>s</a>
+                <ul class="nav navbar-nav navbar-right">
 
-                        <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account</a></li> 
-                        <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
-                        <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
-                        
-                        <!--<li ng-if="!usersCtrl.loggedIn">
-                            <div id="navbar" class="navbar-collapse collapse">
-                            <form ng-submit="usersCtrl.login()" class="navbar-form navbar-right">
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" ng-model="usersCtrl.user.username">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" ng-model="usersCtrl.user.password">
-                                </div>
-
-                                <div class="alert alert-danger" ng-if="usersCtrl.error">
-                                    {{ usersCtrl.error }}
-                                </div>
-
-                                <button type="submit" class="btn btn-success">
-                                    <span>Login</span>
-                                </button>
-                            </form>
-                            </div>
-                        </li>-->
-                        <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Log In</a></li> 
-                        <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign Up</a></li> 
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        
+                    <li><a ui-sref="about">About</a></li> 
+                    
+                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account</a></li> 
+                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
+                    <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
+                    
+                    <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Log In</a></li> 
+                    <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign Up</a></li> 
+                </ul>
+            </div>
+        </nav>
     </div>
 </div>
