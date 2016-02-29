@@ -6,9 +6,9 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li><a ui-sref="about">About</a></li> 
-                    
+
+                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li>                     
                     <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account</a></li> 
-                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
                     <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
                     
                     <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Log In</a></li> 
