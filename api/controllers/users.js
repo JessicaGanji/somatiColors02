@@ -23,6 +23,7 @@ function create(require, response) {
   user.password = require.body.password;
   user.first_name = require.body.first_name;
   user.last_name = require.body.last_name;
+  user.gender = require.gender;
   user.mental_health_physician = require.body.mental_health_physician;
   user.physician_email = require.body.physician_email;
   user.joy = require.body.joy;   
@@ -67,6 +68,7 @@ function update(require, response) {
     if(require.body.password) user.password = require.body.password;
     if(require.body.first_name) user.first_name = require.body.first_name;
     if(require.body.last_name) user.last_name = require.body.last_name;
+    if(require.body.gender) user.gender = require.body.gender;
     if(require.body.mental_health_physician) user.mental_health_physician = require.body.mental_health_physician;
     if(require.body.physician_email) user.physician_email = require.body.physician_email;
     if(require.body.joy) user.joy = require.body.joy;   
