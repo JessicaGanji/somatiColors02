@@ -63,8 +63,14 @@ h2 {
 }
 
 h3 {
+    color: #777;
     font-size: 24px;
     margin-top:0;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -176,7 +182,7 @@ header h3 {
 .colors h4 {
     font-size: 24px;
     font-weight: 600; 
-    margin-bottom: 30px;
+    margin-bottom: 20px; 
 }
 
 .colors p {
@@ -186,7 +192,8 @@ header h3 {
 }
 
 .colors em {
-    font-size: 14px;  
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;  
 }
 
 

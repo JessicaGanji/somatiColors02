@@ -73,14 +73,13 @@
                 </div>
                 
                 <div style="clear:both;"></div>
-
-                <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing; eventsCtrl.editEventId(event._id)">Edit</button>
-                <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
-                
-                <div style="clear:both;"></div>
                 
                 <button class="green-button" ng-click="#">Send to {{ eventsCtrl.userInfo.mental_health_physician }}</button>
 
+                <div style="clear:both;"></div>
+
+                <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing; eventsCtrl.editEventId(event._id)">Edit</button>
+                <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
             </div>
         </div>
         

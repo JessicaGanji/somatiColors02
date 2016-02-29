@@ -1,5 +1,5 @@
 var Event = require('../models/event.js');
-var H_GMAIL_KEY = process.env.H_GMAIL_KEY || require('../config/key.js');
+var H_GMAIL_KEY = process.env.H_GMAIL_KEY || require('../../key.js');
 
 // GET api/:id/events
 function index(request, response) {
