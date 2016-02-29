@@ -355,8 +355,8 @@ button {
     width: 49%;
 }
 
-.switch-margin {
-    margin: 0 0 15px 0;   
+.no-margin {
+    margin: 0;   
 }
 
 /*Body Image*/
