@@ -16,10 +16,10 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 * Express
 * MongoDB + Mongoose
 * AngularJS
-* JSON Web Token
+* JSON Web Tokens
 * BCrypt
 * Gulp
-* Bootstrap + Angular UI + Custom CSS
+* Twitter Bootstrap + Custom CSS
 * Adobe Creative Cloud (Photoshop & Illustrator)
 * Sketch
 
