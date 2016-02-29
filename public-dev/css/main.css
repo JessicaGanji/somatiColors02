@@ -1,3 +1,4 @@
+/*Body*/
 body{
     background-color: #f5f5f5;
     font-family: 'Open Sans', sans-serif;
@@ -6,18 +7,18 @@ body{
 }
 
 section {
-    /*border: 4px solid red;*/
-    padding: 30px 30px 30px 30px;
+    padding: 30px;
 }
 
 .row {
     background-color: white;
 }
 
-footer.row {
-    background-color: #f5f5f5;
+hr {
+    border-top: 1px solid #d8d8d8;
 }
 
+/*Nav*/
 nav {
     padding: 15px 30px;
 }
@@ -35,18 +36,15 @@ nav {
     padding-left:0;
 }
 
-.lines {
-     padding: 60px 30px;   
-}
-
-.closing {
-     padding: 60px 30px;  
-}
-
+/*Footer*/
 footer {
     background-color: #f5f5f5;
     padding: 30px;
     text-align: center;
+}
+
+footer.row {
+    background-color: #f5f5f5;
 }
 
 footer p {
@@ -54,9 +52,7 @@ footer p {
     margin: 0;
 }
 
-hr {
-    border-top: 1px solid #d8d8d8;
-}
+
 
 /* Type */
 h2 {
@@ -74,6 +70,7 @@ h3 {
 
 p {
     font-size: 14px;
+    margin-bottom: 14px;
 }
 
 span {
@@ -84,14 +81,13 @@ strong {
     font-weight: 600;
 }
 
-/* Landing */
-
+/*Landing*/
 header {
     background-image: url("../assets/hero.jpg");
-    background-position: center bottom;
+    background-position: center center;
     background-size: 100% auto;
-    height: 450px;
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
 .landing h2 {
@@ -99,11 +95,6 @@ header {
     color: #41b1bf;
     text-align: center;
     font-weight: 500;
-    /*text-shadow:
-        -1px -1px 50px white,  
-        1px -1px 50px white,
-        -1px 1px 50px white,
-        1px 1px 50px white;*/
 }
 
 .landing h3 {
@@ -112,12 +103,6 @@ header {
     text-align: center;
     font-weight: 500;
     line-height: 1.4;
-    /*text-shadow:
-    -1px -1px 1px #f5f5f5,  
-    1px -1px 1px #f5f5f5,
-    -1px 1px 1px #f5f5f5,
-    1px 1px 1px #f5f5f5;
-    background-color: #f5f5f5;*/
 }
 
 .landing h4 {
@@ -152,13 +137,15 @@ header {
     margin: 15px 0;  
 }
 
-.image-background {
-    background-image: url("../assets/hero.jpg");
-    background-position: center bottom;
-    background-size: 100% auto;
-    /*text-shadow: 1px 1px #777;*/
+.lines {
+     padding: 60px 30px;   
 }
 
+.closing {
+     padding: 60px 30px;  
+}
+
+/*Colors*/
 .red {
     color: #e55c4c;
 }
@@ -176,39 +163,46 @@ header {
 }
 
 
-/* Color Palette */
+/*Color Palette*/
 .colors {
     background: #f5f5f5;
+    padding: 90px 0;
     text-align: center;
-    font-family: 'Kalam', cursive; 
-    font-size: 18px; 
-    padding: 90px 0;  
-}
-
-.colors h3 {
-    font-size: 18px;   
 }
 
 .colors h4 {
-    font-size: 15px;   
+    font-size: 24px;
+    font-weight: 600; 
+    margin-bottom: 30px;
+}
+
+.colors p {
+    font-family: 'Kalam', cursive; 
+    font-size: 18px;
+    margin-bottom: 15px; 
+}
+
+.colors em {
+    font-size: 14px;  
 }
 
 
-/* Bars */
-.side-bar {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 5px;       
-}
 
+
+/*Bars*/
 .top-bar {
     background: #41b1bf;
 }
 
 .top-bar h2 {
     color: #fff;
+    font-size: 24px;
+    line-height: 1.25;
     font-weight: 400;
-    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: 'Open Sans', sans-serif;
+    border-width: 0;
+    padding: 0; 
+    margin: 0;
 }
 
 .search-bar {
@@ -217,10 +211,12 @@ header {
 
 .search-bar input[type=text] {
     color: #fff;
-    border-width: 0px;
-    font-family: 'Kalam', cursive;
-    font-size: 16px;
-    padding: 3px 0; 
+    font-size: 24px;
+    line-height: 1.25;
+    font-family: 'Open Sans', sans-serif;
+    border-width: 0;
+    padding: 0; 
+    margin: 0;
 }
 
 .search-bar input::-webkit-input-placeholder {
@@ -239,7 +235,13 @@ header {
     color: #fff !important;  
 }
 
-/* Timeline Labels */
+.side-bar {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;       
+}
+
+/*Timeline*/
 .left {
     float: left;
     width: 60%;
@@ -262,6 +264,7 @@ header {
     border-radius: 5px;
 }
 
+/*Forms*/
 label {
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;    
@@ -366,6 +369,7 @@ button {
     top: 20%;
 }*/
 
+/*Mobile*/
 @media (max-width: 480px) {
     
     .logo {

@@ -5,7 +5,7 @@
         <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
 
             <div ng-if="event.emotion == 'joyful'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }">></div>
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }"></div>
             </div>
             
             <div ng-if="event.emotion == 'accepted'">
@@ -21,11 +21,11 @@
             </div>
             
             <div ng-if="event.emotion == 'sad'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.sadness }">></div>
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.sadness }"></div>
             </div>
             
             <div ng-if="event.emotion == 'disgusted'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.disgust }">></div>
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.disgust }"></div>
             </div>
             
             <div ng-if="event.emotion == 'angry'">
@@ -39,7 +39,7 @@
                 <hr>
                                     
                 <div class="left"> 
-                    <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
+                    <p>@ <strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
                     <p>{{ event.situation }}</p>
                     
@@ -66,7 +66,7 @@
                 
                 <div class="right">                                        
                     <div ng-if="!event.bodily_sensations">
-                        <span><img src="../../assets/body.png"/></span>
+                        <img src="../../assets/body.png"/>
                     </div>
                     
                     <p><strong>{{ event.bodily_sensations }}</strong></p>
