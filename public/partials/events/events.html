@@ -6,39 +6,38 @@
         <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
 
             <div ng-if="event.emotion == 'joyful'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }">></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }"></div>
             </div>
             
             <div ng-if="event.emotion == 'accepted'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.acceptance }"></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.acceptance }"></div>
             </div>
             
             <div ng-if="event.emotion == 'fearful'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.fear }">></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.fear }"></div>
             </div>
             
-            <div ng-if="event.emotion == 'surprised'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.surprise }">></div>
+           <div ng-if="event.emotion == 'surprised'">
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.surprise }"></div>
             </div>
             
             <div ng-if="event.emotion == 'sad'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.sadness }">></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.sadness }"></div>
             </div>
             
             <div ng-if="event.emotion == 'disgusted'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.disgust }">></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.disgust }"></div>
             </div>
             
             <div ng-if="event.emotion == 'angry'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
             </div>
             
             <div ng-if="event.emotion == 'anticipation'">
-                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anticipation }"></div>
+                <div class="cbp_tmicon cbp_tmicon-screen" ng-style="{ 'background-color': eventsCtrl.userInfo.anticipation }"></div>
             </div>
         
             <div class="cbp_tmlabel">
-                
                 <h3>{{ event.title }} <span>( {{ event.emotion }} )</span></h3>
                 <p>{{ event.date | date: 'MMMM d, yyyy' }}</p>
                 <hr>

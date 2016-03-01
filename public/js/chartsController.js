@@ -1,28 +1,34 @@
 angular.module('SomatiColors')
   .controller('PieController', PieController)
 
-PieController.$inject = ['eventsFactory', '$rootScope']
+PieController.$inject = ['eventsFactory', '$rootScope', '$stateParams']
 
-function PieController(eventsFactory, $rootScope) {
+function PieController(eventsFactory, $rootScope, $stateParams) {
   var vm = this
   var newArr = []
   vm.api = eventsFactory
   vm.events = []
-  vm.labels = ["Joy", "Acceptance", "Fear", "Surprise", "Sadness", "Disgust", "Anger", "Anticipation"]
+  vm.labels = ["Joyful", "Accepted", "Fearful", "Surprised", "Sad", "Disgusted", "Angry", "Anticipation"]
   vm.data = []
   vm.type = 'Doughnut'
   vm.myEmotion = new String()
+  vm.params = $stateParams.user_id;
 
   vm.getEvents = function() {
-    vm.api.list()
+    eventsFactory.showEvents(vm.params)
       .then(function(response){
         console.log('success back',response)
         response = response.data
         for(var i = 0; i < response.length; i++){
-          response[i].emotion = new String(response[i].emotion)
+          response[i].events.emotion = new String(response[i].events.emotion)
+          console.log(response[i].events.emotion)
         }
         vm.events = response
         vm.data = vm.getData(vm.events)
+        console.log(response.events.emotion)
+        console.log(String(response.events.emotion))
+        console.log(response)
+        console.log(vm.data)
     })  
   }
   vm.getEvents()
