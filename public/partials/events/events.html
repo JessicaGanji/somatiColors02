@@ -42,7 +42,10 @@
                 <h3>{{ event.title }} <span>( {{ event.emotion }} )</span></h3>
                 <p>{{ event.date | date: 'MMMM d, yyyy' }}</p>
                 <hr>
-                                    
+                <div ng-hide="showMore">
+                   <button class="green-button" ng-click="showMore=!showMore">Show More</button>
+                </div>
+                <div ng-show="showMore" >                 
                 <div class="left"> 
                     <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
@@ -66,12 +69,15 @@
                     <p><strong>Future Coping Strategies:</strong> {{ event.coping_strategies }}</p>
                 </div>
                 
+                
                 <div class="right">                                        
                     <div ng-if="!event.bodily_sensations">
                         <span><img src="../../assets/body.png"/></span>
                     </div>
                     
                     <p><strong>{{ event.bodily_sensations }}</strong></p>
+                </div>
+                    <button class="green-button" ng-click="showMore=!showMore">Show Less</button>
                 </div>
                 
                 <div style="clear:both;"></div>

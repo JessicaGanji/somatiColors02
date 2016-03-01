@@ -1,3 +1,9 @@
 <div class="side-bar">
-    <h1>Sidebar</h2>    
+    <h1>Sidebar</h2>
+    <div ng-controller="PieController as pieCtrl">
+      <div class="col-md-11 col-md-offset-0">
+        <canvas id="base" class="chart-base" chart-type="pieCtrl.type"
+          chart-data="pieCtrl.data" chart-labels="pieCtrl.labels" chart-colours="pieCtrl.chartParams.colours" chart-legend="true">
+        </canvas>
+      </div> 
 </div>
