@@ -40,21 +40,21 @@ function PieController(eventsFactory, $rootScope) {
 
     for(var j = 0; j < arr.length; j++){
       
-        if (arr[j].category == "Joy"){
+        if (arr[j].emotion == "joyful"){
           joy += arr[j].emotion
-        } else if (arr[j].category == "Acceptance"){
+        } else if (arr[j].category == "accepted"){
           acc += arr[j].emotion
-        } else if (arr[j].category == "Fear"){
+        } else if (arr[j].category == "fearful"){
           fea += arr[j].emotion
-        } else if (arr[j].category == "Surprise"){
+        } else if (arr[j].category == "surprised"){
           sur += arr[j].emotion
-        } else if (arr[j].category == "Sadness"){
+        } else if (arr[j].category == "sad"){
           sad += arr[j].emotion
-        } else if (arr[j].category == "Disgust"){
+        } else if (arr[j].category == "disgusted"){
           dis += arr[j].emotion
-        } else if (arr[j].category == "Anger"){
+        } else if (arr[j].category == "angry"){
           ang += arr[j].emotion
-        } else if (arr[j].category == "Anticipation"){
+        } else if (arr[j].category == "anticipation"){
           ant += arr[j].emotion
         }
     }

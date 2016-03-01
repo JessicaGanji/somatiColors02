@@ -1,3 +1,4 @@
+
 <ul class="cbp_tmtimeline">
 
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
@@ -30,6 +31,10 @@
             
             <div ng-if="event.emotion == 'angry'">
                 <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
+            </div>
+            
+            <div ng-if="event.emotion == 'anticipation'">
+                <div class="cbp_tmicon cbp_tmicon-phone" ng-style="{ 'background-color': eventsCtrl.userInfo.anticipation }"></div>
             </div>
         
             <div class="cbp_tmlabel">
