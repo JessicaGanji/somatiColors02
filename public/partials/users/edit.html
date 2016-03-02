@@ -11,17 +11,17 @@
             <label class="bottom-padding">Last Name</label>
             
             <input type="email" ng-model="usersCtrl.updatedInfo.username">
-            <label class="bottom-padding">Email</label><br><br><br>
+            <label class="bottom-padding">Email</label>
             
-            <h3 class="bottom-padding">Mental Health</h3>
-            
-            <fieldset ng-model="gender" class="bottom-padding">
+            <fieldset ng-model="gender">
                 <input type="radio" id="female" value="female" ng-model="usersCtrl.updatedInfo.gender">
-                <label for="female">Female</label>
+                <label class="bottom-padding" for="female">Female</label> 
                 
                 <input type="radio" id="male" value="male" ng-model="usersCtrl.updatedInfo.gender">
-                <label for="male">Male</label>
-            </fieldset>
+                <label class="bottom-padding" for="male">Male</label>
+            </fieldset><br><br>
+                        
+            <h3 class="bottom-padding">Mental Health</h3>
             
             <input type="text" value="{{ usersCtrl.info.mental_health_physician }}" ng-model="usersCtrl.updatedInfo.mental_health_physician">
             <label class="bottom-padding">Mental Health Physician</label>
