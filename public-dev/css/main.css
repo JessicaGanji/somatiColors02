@@ -124,6 +124,7 @@ header h3 {
     color: #e55c4c;
     font-weight: 600;
     line-height: 1.5;
+    margin-top: 150px;
     margin-bottom: 14px;
 }
 
@@ -419,6 +420,10 @@ button {
     .landing img {
         height: 150px;
         margin: 45px 0 15px 0;  
+    }
+    
+    .landing h4 {
+        margin-top: 0px;
     }
 
 }
