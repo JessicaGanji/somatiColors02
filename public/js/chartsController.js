@@ -12,7 +12,12 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
   vm.labels = ["Joyful", "Accepted", "Fearful", "Surprised", "Sad", "Disgusted", "Angry", "Anticipation"]
   vm.data = []
   vm.type = 'Doughnut'
+  vm.getUserEventAPI = getUserEventAPI;
+ 
+  vm.userInfo = {}
+//   vm.joy = vm.userInfo.joy
 
+  
   vm.getEvents = function() {
     getUserEventAPI(vm.params);
     eventsFactory.showEvents(vm.params)
@@ -20,17 +25,34 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
         console.log('success back',response)
         response = response.data
         vm.events = response
-        vm.data = vm.getData(vm.events)
+        vm.data = vm.getData(vm.events) 
+        console.log(vm.userInfo.joy)
+        function getColour() {
+            console.log(vm.userInfo.joy)
+            var joy = vm.userInfo.joy
+            var acc = vm.userInfo.acceptance
+            var fea = vm.userInfo.fear
+            var sur = vm.userInfo.surprise
+            var sad = vm.userInfo.sadness
+            var dis = vm.userInfo.disgust
+            var ang = vm.userInfo.anger
+            var ant = vm.userInfo.anticipation
+            vm.chartParams = {
+                colours: [joy, acc, fea, sur, sad, dis, ang, ant]
+            }
+        }
+        getColour()
+        console.log(vm.chartParams.colours)
     })  
   }
+  
   vm.getEvents()
   
-  function getUserEventAPI() {
-        usersFactory.showUser(vm.params)
+  function getUserEventAPI(user_id) {
+        usersFactory.showUser(user_id)
         .then(function(response){
             vm.userInfo = response.data;
-            vm.updatedUserInfo = response.data;
-            console.log(response.data);
+            console.log(vm.userInfo);
         });
     };
   
@@ -45,23 +67,22 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
     var ant = 0
     newArr = []
 
-    for(var j = 0; j < arr.events.length; j++){
-      
-        if (arr.events[j].emotion == "joyful"){
+    for(var i = 0; i < arr.events.length; i++) {
+        if (arr.events[i].emotion == "joyful") {
           joy = joy + 1
-        } else if (arr.events[j].emotion == "accepted"){
+        } else if (arr.events[i].emotion == "accepted") {
           acc = acc + 1
-        } else if (arr.events[j].emotion == "fearful"){
+        } else if (arr.events[i].emotion == "fearful") {
           fea = fea + 1
-        } else if (arr.events[j].emotion == "surprised"){
+        } else if (arr.events[i].emotion == "surprised") {
           sur = sur + 1
-        } else if (arr.events[j].emotion == "sad"){
+        } else if (arr.events[i].emotion == "sad") {
           sad = sad + 1
-        } else if (arr.events[j].emotion == "disgusted"){
+        } else if (arr.events[i].emotion == "disgusted") {
           dis = dis + 1
-        } else if (arr.events[j].emotion == "angry"){
+        } else if (arr.events[i].emotion == "angry") {
           ang = ang + 1
-        } else if (arr.events[j].emotion == "anticipation"){
+        } else if (arr.events[i].emotion == "anticipation") {
           ant = ant + 1
         }
     }
@@ -70,17 +91,19 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
     return newArr
   }
 
-  vm.toggle = function() {
-    vm.type = vm.type === 'Doughnut' ? 'PolarArea' : 'Doughnut';
-  }
+//   vm.toggle = function() {
+//     vm.type = vm.type === 'Doughnut' ? 'PolarArea' : 'Doughnut';
+//   }
   
-  function getColour(){
-      
-  }
+//   function getColour(){
+//     //   getUserEventAPI(vm.params)
+//       console.log(vm.joy)
+
+//   }
   
-  vm.chartParams = {
-    colours: ["#14cfd9", "#00D39E", "#02ff13", "#232527", "#ff4949", "#62686D"]
-  }
+//   getColour()
+  
+  
 
   $rootScope.$on('addEvent', function() {
     vm.getEvents()
