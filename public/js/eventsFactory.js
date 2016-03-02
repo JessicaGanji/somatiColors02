@@ -4,7 +4,7 @@ angular.module('SomatiColors')
 eventsFactory.$inject = ['$http', '$stateParams']
 
 function eventsFactory($http, $stateParams) {
-	var eventsUrl = "http://localhost:3000/api/users/"
+	var eventsUrl = "https://somaticolors.herokuapp.com/api/users/"
 	var events = {};
 
     events.showEvents = function(user_id) {

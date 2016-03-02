@@ -4,7 +4,7 @@ angular.module('SomatiColors')
 usersFactory.$inject = ['$http', '$stateParams']
 
 function usersFactory($http, $stateParams){
-	var usersUrl = "http://localhost:3000/api/"
+	var usersUrl = "https://somaticolors.herokuapp.com/api/"
     
 	var users = {};
 
