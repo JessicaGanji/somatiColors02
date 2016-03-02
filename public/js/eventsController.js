@@ -1,9 +1,9 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window']
+EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window', '$rootScope']
 
-function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window) {
+function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window, $rootScope) {
 	var vm = this;
     vm.params = $stateParams.user_id;
     vm.user_emotion = $stateParams.user_id._id;
@@ -44,6 +44,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
             vm.editing = false;
             getEventsAPI(vm.params);
             vm.newEvent = false;
+            $rootScope.$broadcast('addEventAPI')
         });
     };
    

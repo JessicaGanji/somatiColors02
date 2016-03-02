@@ -13,11 +13,9 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
   vm.data = []
   vm.type = 'Doughnut'
   vm.getUserEventAPI = getUserEventAPI;
- 
   vm.userInfo = {}
-//   vm.joy = vm.userInfo.joy
 
-  
+//   this grabs the events and the user's emotion colors and sets them
   vm.getEvents = function() {
     getUserEventAPI(vm.params);
     eventsFactory.showEvents(vm.params)
@@ -25,8 +23,7 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
         console.log('success back',response)
         response = response.data
         vm.events = response
-        vm.data = vm.getData(vm.events) 
-        console.log(vm.userInfo.joy)
+        vm.data = vm.getData(vm.events)
         function getColour() {
             console.log(vm.userInfo.joy)
             var joy = vm.userInfo.joy
@@ -42,12 +39,12 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
             }
         }
         getColour()
-        console.log(vm.chartParams.colours)
     })  
   }
   
   vm.getEvents()
   
+// this grabs the user emotion colors
   function getUserEventAPI(user_id) {
         usersFactory.showUser(user_id)
         .then(function(response){
@@ -56,6 +53,7 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
         });
     };
   
+//   this finds the number of times an emotion is in the events for that user and adds it to the chart
   vm.getData = function(arr) {
     var joy = 0
     var acc = 0
@@ -91,24 +89,9 @@ function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
     return newArr
   }
 
-//   vm.toggle = function() {
-//     vm.type = vm.type === 'Doughnut' ? 'PolarArea' : 'Doughnut';
-//   }
-  
-//   function getColour(){
-//     //   getUserEventAPI(vm.params)
-//       console.log(vm.joy)
-
-//   }
-  
-//   getColour()
-  
-  
-
-  $rootScope.$on('addEvent', function() {
+// this reloads the chart when a new event is added
+  $rootScope.$on('addEventAPI', function() {
     vm.getEvents()
   })
-  $rootScope.$on('deleteEvent', function() {
-    vm.getEvents()
-  })
+ 
 }
