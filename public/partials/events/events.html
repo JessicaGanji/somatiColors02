@@ -1,3 +1,4 @@
+
 <ul class="cbp_tmtimeline">
 
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
@@ -33,11 +34,13 @@
             </div>
         
             <div class="cbp_tmlabel">
-                
                 <h3>{{ event.title }} <span>( {{ event.emotion }} )</span></h3>
                 <p>{{ event.date | date: 'MMMM d, yyyy' }}</p>
                 <hr>
-                                    
+                <div ng-hide="showMore">
+                   <button class="yellow-button" ng-click="showMore=!showMore">Show More</button>
+                </div>
+                <div ng-show="showMore" >                 
                 <div class="left"> 
                     <p>@ <strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                     
@@ -63,7 +66,7 @@
                     
                     <p><strong>Future Coping Strategies:</strong> {{ event.coping_strategies }}</p>
                 </div>
-                
+
                 <div class="right">  
                     <p><strong>{{ event.bodily_sensations }}</strong></p><hr>
                                                                               
@@ -162,6 +165,8 @@
                         <span><img src="../../assets/male/shortness-of-breath.png"/></span>
                     </div>
                     
+                </div>
+                    <button class="yellow-button" ng-click="showMore=!showMore">Show Less</button>
                 </div>
                 
                 <div style="clear:both;"></div>

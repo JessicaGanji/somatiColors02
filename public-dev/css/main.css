@@ -348,6 +348,13 @@ button {
     border-color:#22a57b;
 }
 
+.yellow-button{
+    color:#ffc548;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#ffc548;
+}
+
 .login-button{
     color:#22a57b;
     border-width: 2px;

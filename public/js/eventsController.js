@@ -1,9 +1,9 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window']
+EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window', '$rootScope']
 
-function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window) {
+function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window, $rootScope) {
 	var vm = this;
     vm.params = $stateParams.user_id;
     vm.user_emotion = $stateParams.user_id._id;
@@ -16,6 +16,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     vm.userInfo = {};
     vm.updatedUserInfo = {};
     vm.getUserEventAPI = getUserEventAPI;
+    vm.showMore = false;
 
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id) {
@@ -23,6 +24,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
        eventsFactory.showEvents(user_id)
         .then(function(response) {
            vm.events = response.data.events;
+           vm.showMore = false;
            
        });
    };
@@ -33,6 +35,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
    // Add one event for that user
    vm.addEventInfo = {};
    vm.newEvent = false;
+   
 
    function addEventAPI(user_id) {
        eventsFactory.postEvent(user_id, vm.addEventInfo)
@@ -41,6 +44,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
             vm.editing = false;
             getEventsAPI(vm.params);
             vm.newEvent = false;
+            $rootScope.$broadcast('addEventAPI')
         });
     };
    
