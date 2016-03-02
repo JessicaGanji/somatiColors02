@@ -11,7 +11,7 @@ function PieController(eventsFactory, $rootScope, $stateParams) {
   vm.labels = ["Joyful", "Accepted", "Fearful", "Surprised", "Sad", "Disgusted", "Angry", "Anticipation"]
   vm.data = []
   vm.type = 'Doughnut'
-  vm.myEmotion = new String()
+//   vm.myEmotion = new String()
   vm.params = $stateParams.user_id;
 
   vm.getEvents = function() {
@@ -19,16 +19,16 @@ function PieController(eventsFactory, $rootScope, $stateParams) {
       .then(function(response){
         console.log('success back',response)
         response = response.data
-        for(var i = 0; i < response.length; i++){
-          response[i].events.emotion = new String(response[i].events.emotion)
-          console.log(response[i].events.emotion)
-        }
+        // for(var i = 0; i < response.events.length; i++){
+        //   response.events[i].emotion = new Array(response.events[i].emotion)
+        //   console.log(response.events[i].emotion)
+        // }
         vm.events = response
         vm.data = vm.getData(vm.events)
-        console.log(response.events.emotion)
-        console.log(String(response.events.emotion))
-        console.log(response)
-        console.log(vm.data)
+        // // console.log(response.events[i].emotion)
+        
+        // console.log(response)
+        // console.log(vm.data)
     })  
   }
   vm.getEvents()
@@ -44,24 +44,24 @@ function PieController(eventsFactory, $rootScope, $stateParams) {
     var ant = 0
     newArr = []
 
-    for(var j = 0; j < arr.length; j++){
+    for(var j = 0; j < arr.events.length; j++){
       
-        if (arr[j].emotion == "joyful"){
-          joy += arr[j].emotion
-        } else if (arr[j].category == "accepted"){
-          acc += arr[j].emotion
-        } else if (arr[j].category == "fearful"){
-          fea += arr[j].emotion
-        } else if (arr[j].category == "surprised"){
-          sur += arr[j].emotion
-        } else if (arr[j].category == "sad"){
-          sad += arr[j].emotion
-        } else if (arr[j].category == "disgusted"){
-          dis += arr[j].emotion
-        } else if (arr[j].category == "angry"){
-          ang += arr[j].emotion
-        } else if (arr[j].category == "anticipation"){
-          ant += arr[j].emotion
+        if (arr.events[j].emotion == "joyful"){
+          joy = joy + 1
+        } else if (arr.events[j].emotion == "accepted"){
+          acc = acc + 1
+        } else if (arr.events[j].emotion == "fearful"){
+          fea = fea + 1
+        } else if (arr.events[j].emotion == "surprised"){
+          sur = sur + 1
+        } else if (arr.events[j].emotion == "sad"){
+          sad = sad + 1
+        } else if (arr.events[j].emotion == "disgusted"){
+          dis = dis + 1
+        } else if (arr.events[j].emotion == "angry"){
+          ang = ang + 1
+        } else if (arr.events[j].emotion == "anticipation"){
+          ant = ant + 1
         }
     }
     newArr.push(joy, acc, fea, sur, sad, dis, ang, ant)
