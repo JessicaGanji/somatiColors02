@@ -1,37 +1,38 @@
 angular.module('SomatiColors')
   .controller('PieController', PieController)
 
-PieController.$inject = ['eventsFactory', '$rootScope', '$stateParams']
+PieController.$inject = ['eventsFactory', 'usersFactory', '$rootScope', '$stateParams']
 
-function PieController(eventsFactory, $rootScope, $stateParams) {
+function PieController(eventsFactory, usersFactory, $rootScope, $stateParams) {
   var vm = this
   var newArr = []
   vm.api = eventsFactory
+  vm.params = $stateParams.user_id;
   vm.events = []
   vm.labels = ["Joyful", "Accepted", "Fearful", "Surprised", "Sad", "Disgusted", "Angry", "Anticipation"]
   vm.data = []
   vm.type = 'Doughnut'
-//   vm.myEmotion = new String()
-  vm.params = $stateParams.user_id;
 
   vm.getEvents = function() {
+    getUserEventAPI(vm.params);
     eventsFactory.showEvents(vm.params)
       .then(function(response){
         console.log('success back',response)
         response = response.data
-        // for(var i = 0; i < response.events.length; i++){
-        //   response.events[i].emotion = new Array(response.events[i].emotion)
-        //   console.log(response.events[i].emotion)
-        // }
         vm.events = response
         vm.data = vm.getData(vm.events)
-        // // console.log(response.events[i].emotion)
-        
-        // console.log(response)
-        // console.log(vm.data)
     })  
   }
   vm.getEvents()
+  
+  function getUserEventAPI() {
+        usersFactory.showUser(vm.params)
+        .then(function(response){
+            vm.userInfo = response.data;
+            vm.updatedUserInfo = response.data;
+            console.log(response.data);
+        });
+    };
   
   vm.getData = function(arr) {
     var joy = 0
@@ -72,7 +73,11 @@ function PieController(eventsFactory, $rootScope, $stateParams) {
   vm.toggle = function() {
     vm.type = vm.type === 'Doughnut' ? 'PolarArea' : 'Doughnut';
   }
-
+  
+  function getColour(){
+      
+  }
+  
   vm.chartParams = {
     colours: ["#14cfd9", "#00D39E", "#02ff13", "#232527", "#ff4949", "#62686D"]
   }
